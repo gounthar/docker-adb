@@ -1,5 +1,6 @@
-FROM alpine:3.4
+FROM schmich/armv7hf-alpine-qemu
 
+RUN ["cross-build-start"]
 # Set up insecure default key
 RUN mkdir -m 0750 /root/.android
 ADD files/insecure_shared_adbkey /root/.android/adbkey
@@ -33,3 +34,5 @@ ENTRYPOINT ["/sbin/tini", "--"]
 
 # Start the server by default
 CMD ["adb", "-a", "-P", "5037", "server", "nodaemon"]
+
+RUN ["cross-build-end"]
