@@ -21,7 +21,8 @@ RUN set -xeo pipefail && \
     rm "/root/.wget-hsts" && \
     rm "/tmp/glibc.apk" "/tmp/glibc-bin.apk" && \
     rm -r /var/cache/apk/APKINDEX.* && \
-    /usr/local/bin/update-platform-tools.sh
+    install android-tools-adb android-tools-fastboot
+#    /usr/local/bin/update-platform-tools.sh
 
 # Expose default ADB port
 EXPOSE 5037
