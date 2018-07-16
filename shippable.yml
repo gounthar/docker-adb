@@ -1,0 +1,7 @@
+language: none
+
+sudo: required
+
+build:
+ ci:
+- docker build .
