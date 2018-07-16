@@ -4,4 +4,4 @@ sudo: required
 
 build:
  ci:
-- docker build .
+   - docker build .
