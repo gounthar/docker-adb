@@ -1,4 +1,4 @@
-FROM debian:stretch as base
+FROM arm32v7/debian:stretch as base
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV LC_ALL=C.UTF-8  
