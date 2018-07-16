@@ -17,4 +17,4 @@ COPY --from=mitchtech/arm-adb /root/.android/adbkey.pub .android/adbkey.pub
 COPY --from=mitchtech/arm-adb /root/.android/adbkey .android/adbkey
 
 EXPOSE 5037/tcp
-CMD adb -a -P 5037 fork-server server
+CMD adb -a -P 5037 server nodaemon
