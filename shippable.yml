@@ -2,6 +2,9 @@ language: none
 
 sudo: required
 
+runtime:
+  nodePool: shippable_shared_aarch64
+  
 build:
  ci:
    - docker build .
