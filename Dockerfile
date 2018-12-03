@@ -11,11 +11,11 @@ RUN set -xeo pipefail && \
     apk update && \
     apk add wget ca-certificates tini && \
     wget -O "/etc/apk/keys/sgerrand.rsa.pub" \
-      "https://raw.githubusercontent.com/andyshinn/alpine-pkg-glibc/master/sgerrand.rsa.pub" && \
+      "https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub" && \
     wget -O "/tmp/glibc.apk" \
-      "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-2.23-r3.apk" && \
+      "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk" && \
     wget -O "/tmp/glibc-bin.apk" \
-      "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-bin-2.23-r3.apk" && \
+      "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-bin-2.28-r0.apk" && \
     apk add "/tmp/glibc.apk" "/tmp/glibc-bin.apk" && \
     rm "/etc/apk/keys/sgerrand.rsa.pub" && \
     rm "/root/.wget-hsts" && \
