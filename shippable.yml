@@ -8,3 +8,5 @@ runtime:
 build:
  ci:
    - docker build .
+ post_ci:
+   - docker push gounthar/docker-adb:aarch64
