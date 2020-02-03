@@ -12,7 +12,7 @@ integrations:
 
 build:
  ci:
-   - docker -t docker-adb:aarch64 build .
+   - docker build -t docker-adb:aarch64 build .
  post_ci:
    #- docker tag docker-adb:aarch64 gounthar/docker-adb:aarch64
    - docker push gounthar/docker-adb:aarch64
