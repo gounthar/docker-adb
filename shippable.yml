@@ -12,7 +12,6 @@ env:
     
 build:
  ci:
-   #- docker build -t docker-adb:aarch64 .
    - docker build -t $DOCKER_ACC/$DOCKER_REPO:$BRANCH.armv7
  post_ci:
    - docker push $DOCKER_ACC/$DOCKER_REPO:$BRANCH.armv7
