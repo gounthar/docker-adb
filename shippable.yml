@@ -5,12 +5,17 @@ sudo: required
 runtime:
   nodePool: shippable_shared_aarch64
 
+env:
+  global:
+    - DOCKER_REPO="docker-adb"
+    - DOCKER_ACC=gounthar # {account name}
+    
 build:
  ci:
    - docker build -t docker-adb:aarch64 .
  post_ci:
-   #- docker tag docker-adb:aarch64 gounthar/docker-adb:aarch64
-   - docker push gounthar/docker-adb:aarch64
+   - docker build -t $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER .
+   - docker push $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER
 
 integrations:                               
   hub:
