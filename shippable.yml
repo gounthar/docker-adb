@@ -4,7 +4,12 @@ sudo: required
 
 runtime:
   nodePool: shippable_shared_aarch64
-  
+
+integrations:                               
+  hub:
+    - integrationName: docker_hub
+      type: dockerRegistryLogin  
+
 build:
  ci:
    - docker -t docker-adb:aarch64 build .
