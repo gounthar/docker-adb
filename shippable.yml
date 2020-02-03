@@ -15,4 +15,4 @@ build:
    - docker build -t docker-adb:aarch64 .
  post_ci:
    #- docker tag docker-adb:aarch64 gounthar/docker-adb:aarch64
-   - docker push gounthar/docker-adb:aarch64
+   - docker push docker_hub/gounthar/docker-adb:aarch64
