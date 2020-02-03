@@ -9,4 +9,5 @@ build:
  ci:
    - docker build .
  post_ci:
+   - docker tag docker-adb:aarch64 gounthar/docker-adb:aarch64
    - docker push gounthar/docker-adb:aarch64
