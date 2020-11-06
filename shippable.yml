@@ -1,0 +1,22 @@
+language: none
+
+sudo: required
+
+runtime:
+  nodePool: shippable_shared_aarch64
+
+env:
+  global:
+    - DOCKER_REPO="docker-adb"
+    - DOCKER_ACC=gounthar # {account name}
+    
+build:
+ ci:
+   - docker build -t $DOCKER_ACC/$DOCKER_REPO:docker-adb-aarch64 .
+ post_ci:
+   - docker push $DOCKER_ACC/$DOCKER_REPO:docker-adb-aarch64
+
+integrations:                               
+  hub:
+    - integrationName: docker_hub
+      type: dockerRegistryLogin  
