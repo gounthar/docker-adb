@@ -12,9 +12,9 @@ env:
     
 build:
  ci:
-   - docker build -t $DOCKER_ACC/$DOCKER_REPO:docker-adb-aarch64 .
+   - docker build -t $DOCKER_ACC/$DOCKER_REPO:aarch64 .
  post_ci:
-   - docker push $DOCKER_ACC/$DOCKER_REPO:docker-adb-aarch64
+   - docker push $DOCKER_ACC/$DOCKER_REPO:aarch64
 
 integrations:                               
   hub:
